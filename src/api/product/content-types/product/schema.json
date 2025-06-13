@@ -36,6 +36,12 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "preorder": {
+      "type": "boolean"
+    },
+    "preorder_release": {
+      "type": "date"
     }
   }
 }
