@@ -1,6 +1,22 @@
 export default [
   "strapi::errors",
-  "strapi::security",
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          "img-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            "https://res.cloudinary.com",
+            "https://market-assets.strapi.io",
+          ],
+        },
+      },
+    },
+  },
   {
     name: "strapi::cors",
     config: {
@@ -8,31 +24,12 @@ export default [
         "http://localhost:3000",
         "https://stabcult.com",
         "https://www.stabcult.com",
-      ], // Allow your frontend URL here
-      headers: [
-        "Content-Type",
-        "Authorization",
-        "x-api-secret", // ✅ allow your custom header
       ],
+      headers: ["Content-Type", "Authorization", "x-api-secret"],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       credentials: true,
     },
   },
-  {
-    name: "strapi::security",
-    config: {
-      contentSecurityPolicy: {
-        directives: {
-          "img-src": ["'self'", "data:", "blob:", "https://res.cloudinary.com"],
-          "style-src": ["'self'", "'unsafe-inline'"],
-          "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-          "worker-src": ["'self'", "blob:", "data:"],
-          "object-src": ["'none'"],
-        },
-      },
-    },
-  },
-  "strapi::cors",
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
@@ -40,7 +37,6 @@ export default [
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
-  "strapi::security",
   {
     name: "global::verify-shared-secret",
     config: {},
