@@ -26,9 +26,6 @@
     "deliveryMethod": {
       "type": "string"
     },
-    "address": {
-      "type": "blocks"
-    },
     "paymentMethod": {
       "type": "enumeration",
       "enum": [
@@ -54,6 +51,9 @@
     },
     "orderId": {
       "type": "string"
+    },
+    "address": {
+      "type": "json"
     }
   }
 }
