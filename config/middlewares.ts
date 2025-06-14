@@ -4,7 +4,11 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:3000"], // Allow your frontend URL here
+      origin: [
+        "http://localhost:3000",
+        "https://stabcult.com",
+        "https://www.stabcult.com",
+      ], // Allow your frontend URL here
       headers: [
         "Content-Type",
         "Authorization",
