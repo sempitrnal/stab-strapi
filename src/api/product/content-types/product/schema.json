@@ -42,6 +42,9 @@
     },
     "preorder_release": {
       "type": "date"
+    },
+    "color": {
+      "type": "json"
     }
   }
 }

@@ -2,6 +2,19 @@ export default [
   "strapi::errors",
   "strapi::security",
   {
+    name: "strapi::cors",
+    config: {
+      origin: ["http://localhost:3000"], // Allow your frontend URL here
+      headers: [
+        "Content-Type",
+        "Authorization",
+        "x-api-secret", // ✅ allow your custom header
+      ],
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      credentials: true,
+    },
+  },
+  {
     name: "strapi::security",
     config: {
       contentSecurityPolicy: {
@@ -23,4 +36,9 @@ export default [
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
+  "strapi::security",
+  {
+    name: "global::verify-shared-secret",
+    config: {},
+  },
 ];
