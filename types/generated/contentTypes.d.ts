@@ -594,7 +594,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     deliveryMethod: Schema.Attribute.String;
     email: Schema.Attribute.String;
     firstName: Schema.Attribute.String;
-    items: Schema.Attribute.JSON;
+    items: Schema.Attribute.Component<'shared.order-items', true>;
     lastName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &

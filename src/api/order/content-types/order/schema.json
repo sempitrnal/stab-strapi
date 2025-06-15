@@ -33,9 +33,6 @@
         "bank"
       ]
     },
-    "items": {
-      "type": "json"
-    },
     "total": {
       "type": "decimal"
     },
@@ -54,6 +51,11 @@
     },
     "address": {
       "type": "json"
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.order-items",
+      "repeatable": true
     }
   }
 }

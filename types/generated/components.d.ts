@@ -1,5 +1,13 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ImageImage extends Struct.ComponentSchema {
+  collectionName: 'components_image_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {};
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -8,6 +16,21 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedOrderItems extends Struct.ComponentSchema {
+  collectionName: 'components_shared_order_items';
+  info: {
+    displayName: 'order_items';
+  };
+  attributes: {
+    color: Schema.Attribute.String;
+    image: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    price: Schema.Attribute.Decimal;
+    quantity: Schema.Attribute.Integer;
+    size: Schema.Attribute.String;
   };
 }
 
@@ -65,7 +88,9 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'image.image': ImageImage;
       'shared.media': SharedMedia;
+      'shared.order-items': SharedOrderItems;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
