@@ -600,6 +600,15 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
     orderId: Schema.Attribute.String;
+    orderStatus: Schema.Attribute.Enumeration<
+      [
+        'preorder',
+        'processing',
+        'ready_for_pickup',
+        'ready_to_ship',
+        'completed',
+      ]
+    >;
     paymentMethod: Schema.Attribute.Enumeration<['gcash', 'bank']>;
     proof: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;

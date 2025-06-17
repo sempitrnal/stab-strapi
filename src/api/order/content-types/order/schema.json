@@ -56,6 +56,16 @@
       "type": "component",
       "component": "shared.order-items",
       "repeatable": true
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "preorder",
+        "processing",
+        "ready_for_pickup",
+        "ready_to_ship",
+        "completed"
+      ]
     }
   }
 }
