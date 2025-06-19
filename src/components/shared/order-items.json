@@ -22,6 +22,9 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "productId": {
+      "type": "string"
     }
   },
   "config": {}

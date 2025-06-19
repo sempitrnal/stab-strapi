@@ -29,6 +29,7 @@ export interface SharedOrderItems extends Struct.ComponentSchema {
     image: Schema.Attribute.String;
     name: Schema.Attribute.String;
     price: Schema.Attribute.Decimal;
+    productId: Schema.Attribute.String;
     quantity: Schema.Attribute.Integer;
     size: Schema.Attribute.String;
   };
